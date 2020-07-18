@@ -1,0 +1,20 @@
+// Variables
+
+$website-width: 1280px;
+$main-color: #ffbc00;
+$light-color: #f4f4f4;
+$dark-color: #333;
+$medium-color: #ccc;
+// Note we don't have to put url link indicating we have to first go out of current folder because we are 'pretending' we are in the css folder
+$bg-image: url("../img/showcase.jpg");
+
+// Functions
+// Set text Color
+// Will take in background color to detemine text color
+@function set-text-color($color) {
+  @if (lightness($color) >50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
