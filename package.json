@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-website",
+  "name": "gamebaselearning",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -11,5 +11,13 @@
     "node-sass": "^4.14.1"
   },
   "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katie314/Portfolio_Trial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/katie314/Portfolio_Trial/issues"
+  },
+  "homepage": "https://github.com/katie314/Portfolio_Trial#readme",
   "description": ""
 }

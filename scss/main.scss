@@ -18,6 +18,9 @@ a {
   text-decoration: none;
   color: $dark-color;
 }
+a:hover {
+  color: $main-color;
+}
 
 ul {
   list-style: none;
@@ -37,7 +40,10 @@ img {
 #main-nav {
   display: flex;
   justify-content: space-between;
-  padding-top: rem;
+  padding-top: 1 rem;
+  color: #fff;
+  height: 4rem;
+  background: #333;
 
   ul {
     display: flex;
@@ -51,7 +57,6 @@ img {
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
-    // Need to make transparent because want hover state to have line under it from border, but will move tet up to add border if you don't put a transparent one to begin with
     border-bottom: 3px transparent solid;
     padding-bottom: 0.5rem;
     // border color will transition/fade in, on hover
@@ -67,25 +72,15 @@ img {
   }
 }
 
-// Note: Logo in both header home and header inner. Since there is no ID of just header, we cannot just use #header selector, so we include separatly.
-// Logo
-
-#logo {
-  width: 70px;
-  height: 70px;
-  color: #fff;
-  text-transform: uppercase;
-}
-
 // Header
 #header {
   // Header Home
   &-home {
     background: $bg-image no-repeat center right/cover;
     height: 100vh;
-    color: #fff;
+    color: #333;
+    position: relative;
 
-    // Header Content "I am the..."
     .header-content {
       text-align: center;
       padding-top: 20%;
@@ -98,14 +93,11 @@ img {
   }
   // Header Inner
   &-inner {
-    // 20% on x-axis, 30% on y-axis
-    background: $bg-image no-repeat 20% 30% / cover;
-    height: 5.5rem;
+    height: 4rem;
     border-bottom: 3px solid $main-color;
   }
 }
 
-// Home Sections
 #home {
   &-a {
     .specials {
@@ -113,7 +105,8 @@ img {
       display: grid;
       grid-gap: 1rem;
       grid-template-columns: repeat(4, 1fr);
-      .fas {
+      .fas,
+      .fab {
         color: $main-color;
         padding-bottom: 0.4rem;
       }
@@ -123,7 +116,7 @@ img {
   &-b {
     .stats {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       li {
         line-height: 2;
 
@@ -206,161 +199,143 @@ img {
   }
 }
 
-// About Sections
 #about {
   &-a {
     .about-info {
       display: grid;
       grid-template-areas:
-        "bioimage bio bio"
-        "aw1 aw2 aw3";
+        "infographic roots"
+        "infographic ben"
+        "infographic flow"
+        "infographic vid";
       grid-gap: 1.2rem;
+      grid-template-columns: 30rem;
     }
 
     // Grid areas
-    .bio-image {
-      grid-area: bioimage;
+    .roots-image {
+      grid-area: infographic;
     }
-    .bio {
-      grid-area: bio;
+    .roots {
+      grid-area: roots;
       border-left: 3px solid $main-color;
-      padding: 0.8rem;
+      padding: 1rem;
+      font-size: 1.1rem;
     }
 
-    .award-1 {
-      grid-area: aw1;
-    }
-
-    .award-2 {
-      grid-area: aw2;
-    }
-
-    .award-3 {
-      grid-area: aw3;
-    }
-
-    .award-1 .fas,
-    .award-2 .fas,
-    .award-3 .fas {
-      color: $main-color;
-      margin: 1rem;
-    }
-  }
-  &-b {
-    .progress {
-      overflow: hidden;
-      height: 20px;
-      // empty prgorss bar color
-      background: $medium-color;
-      border-radius: 5px;
-      margin-bottom: 0.6px;
-
-      div {
-        // Height will be 100% of its progress container
-        height: 100%;
-        color: #fff;
-        text-align: center;
-        background: $main-color;
-      }
-    }
-  }
-
-  &-c {
-    .about-logos {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 2rem;
-
-      img {
-        width: 70%;
-      }
-    }
-  }
-
-  &-d {
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 0.5rem;
-
-      ul {
-        list-style: none;
-        margin-top: 1rem;
-        display: flex;
-        align-items: center;
-      }
-
+    .benefit {
+      grid-area: ben;
+      padding: 2rem;
       p {
-        border: 1px solid $medium-color;
-        border-radius: 5px;
-        padding: 0.5rem;
+        font-size: 1.2rem;
       }
 
-      img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-right: 0.5rem;
+      ol {
+        padding: 0 2rem;
+        font-size: 1.2rem;
+        li {
+          padding: 0.5rem;
+        }
       }
+    }
+
+    .flow {
+      grid-area: flow;
+      border-left: 3px solid $main-color;
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .video {
+      grid-area: vid;
+      padding: 2rem;
+      width: 90%;
     }
   }
 }
 
-//  Contact Page
-#contact {
+#testimony {
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+
+    ul {
+      list-style: none;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    p {
+      border: 1px solid $medium-color;
+      height: 125px;
+      border-radius: 5px;
+      padding: 0.5rem;
+    }
+
+    i {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+#success {
   &-a {
-    //  text-fields wraps around all inputs
-    .text-fields {
+    .example1 {
       display: grid;
-      grid-template-areas:
-        "name email"
-        "subject phone"
-        "message message";
+      grid-template-areas: "msimg  msimg ms";
       grid-gap: 1.2rem;
-      margin-bottom: 1.2rem;
-
-      // Grid areas - need to map name of classes to grid areas
-      .name-input {
-        grid-area: name;
-      }
-      .phone-input {
-        grid-area: phone;
-      }
-      .subject-input {
-        grid-area: subject;
-      }
-      .phone-input {
-        grid-area: phone;
-      }
-      .message-input {
-        grid-area: message;
-        height: 100px;
-      }
-      // All inputs have a class of text-input
-      .text-input {
-        padding: 0.5rem 1rem;
-      }
+      grid-template-columns: 30rem;
     }
-    // Target submit botton
-    button[type="submit"] {
-      width: 50%;
+
+    .mathsnack-image {
+      grid-area: msimg;
+    }
+    .mathsnack {
+      grid-area: ms;
+      padding: 1rem 2rem;
     }
   }
-
   &-b {
-    .contact-info {
+    .example2 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      text-align: center;
+      grid-template-areas: "ac ac acimg ";
+      grid-gap: 1.2rem;
+      grid-template-columns: 30rem;
     }
-  }
 
-  &-c {
-    h1 {
-      text-align: center;
-      font-size: 4rem;
+    .algchamp-image {
+      grid-area: acimg;
+    }
+    .algchamp {
+      grid-area: ac;
+      padding: 1rem 2rem;
     }
   }
+}
+
+.principles {
+  h3 {
+    text-transform: none;
+    padding: 1rem 0;
+    color: $main-color;
+  }
+  ol {
+    padding: 0 1.5rem;
+    li {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// Resource
+.link:hover {
+  color: $medium-color;
+  text-decoration: #333;
 }
 
 // Footer
@@ -374,21 +349,6 @@ img {
     justify-content: space-between;
     height: 5rem;
     align-items: center;
-
-    .social .fab {
-      margin-right: 1rem;
-      border: 2px #fff solid;
-      border-radius: 50%;
-      height: 20px;
-      width: 20px;
-      line-height: 20px;
-      text-align: center;
-      padding: 0.5rem;
-
-      &:hover {
-        background: $main-color;
-      }
-    }
   }
 }
 

@@ -6,6 +6,63 @@
       padding-top: 5rem;
     }
   }
+  #header-inner {
+    height: 5rem;
+    .current {
+      border: none;
+    }
+  }
+
+  #about {
+    &-a {
+      .about-info {
+        grid-template-columns: 45rem;
+        grid-template-areas:
+          "roots"
+          "ben"
+          "flow"
+          "vid"
+          "infographic";
+      }
+    }
+    &-c {
+      display: none;
+    }
+  }
+
+  #testimony {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    i {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  #success {
+    &-a {
+      .example1 {
+        display: grid;
+        grid-template-areas:
+          "ms"
+          "msimg";
+        grid-gap: 1.2rem;
+        grid-template-columns: 45rem;
+      }
+    }
+    &-b {
+      .example2 {
+        display: grid;
+        grid-template-areas:
+          "ac"
+          "acimg ";
+        grid-gap: 1.2rem;
+        grid-template-columns: 45rem;
+      }
+    }
+  }
 }
 
 // Smartphones
@@ -16,19 +73,29 @@
 
     li {
       padding: 1rem;
+      font-size: 0.5rem;
     }
   }
   #header {
     &-home {
-      height: 10rem;
+      height: 15rem;
       border-bottom: 3px solid $main-color;
       background-position: 20% 30%;
+
       .header-content {
-        display: none;
+        h1 {
+          font-size: 1.5rem;
+        }
+        span {
+          display: none;
+        }
       }
     }
     &-inner {
-      height: 10rem;
+      height: 5rem;
+      .current {
+        border: none;
+      }
     }
   }
 
@@ -37,7 +104,6 @@
   #home-b .stats,
   #home-c .process,
   #about-d .testimonials,
-  #contact-b .contact-info,
   .items {
     grid-template-columns: 1fr;
   }
@@ -60,17 +126,16 @@
     }
   }
 
-  //   About
   #about {
     &-a {
-      // need to adjust the grid template areas property
       .about-info {
+        grid-template-columns: 20rem;
         grid-template-areas:
-          "bioimage"
-          "bio"
-          "aw1"
-          "aw2"
-          "aw3";
+          "roots"
+          "ben"
+          "flow"
+          "vid"
+          "infographic";
       }
     }
     &-c {
@@ -78,34 +143,48 @@
     }
   }
 
-  //   Contact
-  #contact {
+  #testimony {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      p {
+        font-size: 0.9rem;
+      }
+      ul {
+        margin-top: none;
+      }
+      li {
+        font-size: 0.7rem;
+        padding: none;
+        margin: none;
+      }
+      i {
+        width: 30px;
+        height: 30px;
+        margin-right: none;
+      }
+    }
+  }
+
+  #success {
     &-a {
-      .text-fields {
-        //   Stack inputs
+      .example1 {
+        display: grid;
         grid-template-areas:
-          "name"
-          "subject"
-          "email"
-          "phone"
-          "message";
+          "ms"
+          "msimg";
+        grid-gap: 1.2rem;
+        grid-template-columns: 20rem;
       }
     }
     &-b {
-      div {
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px #555 solid;
-        &:last-child {
-          border: none;
-          margin-bottom: 0;
-          padding-bottom: 0;
-        }
-      }
-    }
-    &-c {
-      h1 {
-        font-size: 2rem;
+      .example2 {
+        display: grid;
+        grid-template-areas:
+          "ac"
+          "acimg ";
+        grid-gap: 1.2rem;
+        grid-template-columns: 20rem;
       }
     }
   }
@@ -121,7 +200,7 @@
   }
 }
 
-// Lasdscape Mode
+// Landscape Mode
 
 @media (max-height: 580px) {
   #header-home {

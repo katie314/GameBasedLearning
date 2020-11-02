@@ -2,7 +2,6 @@
   max-width: $website-width;
   padding: 0 1.5rem;
   margin: auto;
-  //   This will keep everything from going outside of its container. ie. no scroll bars
   overflow: hidden;
 }
 
@@ -36,7 +35,6 @@
   }
 }
 
-// To grab anything that has 'btn-something' in the class we can use ^='btn-' to target it
 button[class^="btn-"]:hover,
 a[class^="btn-"]:hover,
 input[class^="btn-"]:hover {
@@ -114,12 +112,17 @@ input[class^="btn-"]:hover {
 }
 
 .bottom-line {
-  // give div properties to make it a line
   height: 2px;
   width: 3rem;
   background: $main-color;
-  // Will display on its own line
   display: block;
-  // auto on left and right to center line
+  margin: 0 auto 1rem auto;
+}
+
+.divider {
+  height: 5px;
+  width: 95%;
+  background: $main-color;
+  display: block;
   margin: 0 auto 1rem auto;
 }
