@@ -306,7 +306,7 @@ img {
 
 #about-a .about-info {
   display: grid;
-  grid-template-areas: "infographic roots" "infographic ben" "infographic flow" "infographic vid";
+  grid-template-areas: "infographic roots" "infographic flow" "infographic vid";
   grid-gap: 1.2rem;
   grid-template-columns: 30rem; }
 
@@ -319,17 +319,6 @@ img {
   padding: 1rem;
   font-size: 1.1rem; }
 
-#about-a .benefit {
-  grid-area: ben;
-  padding: 2rem; }
-  #about-a .benefit p {
-    font-size: 1.2rem; }
-  #about-a .benefit ol {
-    padding: 0 2rem;
-    font-size: 1.2rem; }
-    #about-a .benefit ol li {
-      padding: 0.5rem; }
-
 #about-a .flow {
   grid-area: flow;
   border-left: 3px solid #ffbc00;
@@ -340,6 +329,17 @@ img {
   grid-area: vid;
   padding: 2rem;
   width: 90%; }
+
+.benefit {
+  margin: 2rem;
+  padding: 2rem; }
+  .benefit p {
+    font-size: 1.2rem; }
+  .benefit ol {
+    padding: 0 2rem;
+    font-size: 1.2rem; }
+    .benefit ol li {
+      padding: 0.5rem; }
 
 #testimony .testimonials {
   display: grid;

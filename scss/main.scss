@@ -205,7 +205,6 @@ img {
       display: grid;
       grid-template-areas:
         "infographic roots"
-        "infographic ben"
         "infographic flow"
         "infographic vid";
       grid-gap: 1.2rem;
@@ -223,22 +222,6 @@ img {
       font-size: 1.1rem;
     }
 
-    .benefit {
-      grid-area: ben;
-      padding: 2rem;
-      p {
-        font-size: 1.2rem;
-      }
-
-      ol {
-        padding: 0 2rem;
-        font-size: 1.2rem;
-        li {
-          padding: 0.5rem;
-        }
-      }
-    }
-
     .flow {
       grid-area: flow;
       border-left: 3px solid $main-color;
@@ -250,6 +233,22 @@ img {
       grid-area: vid;
       padding: 2rem;
       width: 90%;
+    }
+  }
+}
+
+.benefit {
+  margin: 2rem;
+  padding: 2rem;
+  p {
+    font-size: 1.2rem;
+  }
+
+  ol {
+    padding: 0 2rem;
+    font-size: 1.2rem;
+    li {
+      padding: 0.5rem;
     }
   }
 }
